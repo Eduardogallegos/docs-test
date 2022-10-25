@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.0.0/mermaid.min.js"></script>
+</head>
+<body>
+    <pre>
+        <code class="language-mermaid">graph LR
+            A--&gt;B
+        </code>
+    </pre>
+    <pre>
+        <code class="language-mermaid">graph LR
+                A-->B;
+                A-->C;
+                B-->D;
+                C-->D;
+        </code>
+    </pre>
+
+    <pre>
+        <code class="language-mermaid">graph LR
+            * --> Still
+            Still --> *
+            Still --> Moving
+            Moving --> Still
+            Moving --> Crash
+            Crash --> *
+        </code>
+    </pre>
+
+    <pre>
+        <code class="language-mermaid">graph LR
+            dotcom
+            iframe
+            viewscreen
+            dotcom->>iframe: loads html w/ iframe url
+            iframe->>viewscreen: request template
+            viewscreen->>iframe: html & javascript
+            iframe->>dotcom: iframe ready
+            dotcom->>iframe: set mermaid data on iframe
+            iframe->>iframe: render mermaid
+        </code>
+    </pre>
+            
+</body>
+<script>
+    var config = {
+        startOnLoad:true,
+        theme: 'forest',
+        flowchart:{
+                useMaxWidth:false,
+                htmlLabels:true
+            }
+    };
+    mermaid.initialize(config);
+    window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+</script>
+        
+</html>
