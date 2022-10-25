@@ -21,3 +21,22 @@ sequenceDiagram
     dotcom->>iframe: set mermaid data on iframe
     iframe->>iframe: render mermaid
 ```
+
+```mermaid
+stateDiagram-v2
+[*] --> Still
+Still --> [*]
+Still --> Moving
+Moving --> Still
+Moving --> Crash
+Crash --> [*]
+```
+
+```mermaid
+flowchart LR
+
+A[Hard] -->|Text| B(Round)
+B --> C{Decision}
+C -->|One| D[Result 1]
+C -->|Two| E[Result 2]
+```
